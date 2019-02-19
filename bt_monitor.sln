@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bt_monitor", "bt_monitor\bt_monitor.csproj", "{1C21D30F-6F71-4A02-B665-8EE439BD896E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bt_helper", "bt_helper\bt_helper.csproj", "{6419E984-D859-4C8B-990C-913726EF2C0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C21D30F-6F71-4A02-B665-8EE439BD896E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C21D30F-6F71-4A02-B665-8EE439BD896E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C21D30F-6F71-4A02-B665-8EE439BD896E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C21D30F-6F71-4A02-B665-8EE439BD896E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6419E984-D859-4C8B-990C-913726EF2C0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6419E984-D859-4C8B-990C-913726EF2C0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6419E984-D859-4C8B-990C-913726EF2C0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6419E984-D859-4C8B-990C-913726EF2C0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

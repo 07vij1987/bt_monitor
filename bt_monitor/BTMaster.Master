@@ -1,0 +1,215 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BTMaster.Master.cs" Inherits="bt_monitor.BTMaster" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="Styles/CustomStyles.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+    /* scroll bar for opera/chrome/safari */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+   /* border-radius: 10px;*/
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #b30000; 
+   /* border-radius: 10px;*/
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+}
+
+/* scroll bar for IE/Edge */
+::-ms-scrollbar {
+    width: 5px;
+}
+::-ms-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+   /* border-radius: 10px;*/
+}
+::-ms-scrollbar-thumb {
+    background: #b30000; 
+   /* border-radius: 10px;*/
+}
+::-ms-scrollbar-thumb:hover {
+    background: #b30000; 
+}
+/* scroll bar for firefox */
+::-moz-scrollbar {
+    width: 5px;
+}
+::-moz-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+   /* border-radius: 10px;*/
+}
+::-moz-scrollbar-thumb {
+    background: #b30000; 
+   /* border-radius: 10px;*/
+}
+::-moz-scrollbar-thumb:hover {
+    background: #b30000; 
+}
+.sidenav {
+  margin: 0;
+  padding: 0;
+  width: 210px;
+  background-color: #2f4050;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  z-index:1;
+}
+.sidenav a {
+    display: block;
+    color: #a7b1c2;
+    padding: 16px 8px 16px 10px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.sidenav a:hover,.sidenav a:focus {
+  background-color: #293846;
+  color: white;
+}
+.sidenav > a:active {
+  border-left: 4px solid #19aa8d;
+  background: #293846;
+}
+.content {
+    margin-left: 20%;
+    padding: 1px 16px;
+    height: 80%;
+}
+.divBody
+{
+	margin-left:220px;
+	background-color: #f1f1f1;
+	height:80%;
+	margin-top:15px;
+}
+.sidenavSmall
+{
+	display:none;
+    background-color: #2f4050;
+}
+.topnav
+{
+	display:none;
+	overflow: hidden;
+    background-color: #2f4050;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #a7b1c2;
+  text-align: center;
+  padding: 14px 14px;
+  text-decoration: none;
+  font-size: 14px;
+}
+.topnav a:hover,.topnav a:focus  {
+  background-color: #293846;
+  color: white;
+}
+.topnav .icon
+{
+	display:none;
+}
+
+@media screen and (max-width: 800px) and (min-width: 550px) {
+  .sidenav {display:none;}
+  .divBody {margin-left:45px;}
+  .sidenavSmall {display:block;width:45px;height: 100%; overflow: auto;position: fixed;margin: 0;padding: 0;}
+  .sidenavSmall a {display:block;color: #a7b1c2;padding: 8px 8px 16px 8px; font-size: 25px;}
+  .sidenavSmall a:hover {background-color: #293846;color: white;}
+  #divHeader {display:none;}
+}
+
+@media screen and (max-width: 549px)
+{
+	.sidenav {display:none;}
+	.sidenavSmall {display:none;}
+	.topnav {display:block;}
+	.divBody {margin-left:0;}
+	.topnav a:not(:first-child) {display: none;}
+	.topnav a:first-child {font-size: 25px;}
+	.topnav a.icon {float: right;display: block;font-size: 25px;}
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {position: absolute;right:0;top:0;}
+    .topnav.responsive a {float: none;display: block;text-align: left;}
+    #divHeader {display:none;}
+}
+
+</style>
+<script type="text/javascript">
+    function showDropdownItems() {
+        var x = document.getElementById("divHorizontal");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+<asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+<form id="form1" runat="server">
+<div id ="divHeader" style="border:1px; border-style:solid;background-color:#2f4050;border-color:#f1f1f1;position:fixed;left:240px;" >
+<div style="display:inline-block;position:fixed;left:240px;background-color:#2f4050;">
+<asp:Label ID="lblPage" runat="server" Font-Size="Large" ForeColor="#a7b1c2"></asp:Label>
+</div>
+<div style="display:inline-block;position:fixed;right:15px;background-color:#2f4050;">
+<a id="homeBtn" style="float:right; text-decoration:none; background-color:transparent; font-size:xx-large;color: #a7b1c2;"  href="DashBoard.aspx" runat="server">
+<i class="fa fa-home"></i></a>
+</div>
+</div>
+
+<div id="divHorizontal" class="topnav">
+<a href="DashBoard.aspx" title ="Home"><i class="fa fa-home"></i></a>
+<a href="SuspensionMonitor.aspx"><i class="fa fa-dashboard"> | Suspension Monitor</i></a>
+<a href="CustomQuery.aspx"><i class="fa fa-puzzle-piece"> | Custom MsgBox Query</i></a>
+<a href="ApplicationInformation.aspx"><i class="fa fa-sticky-note"> | Application Information</i></a>
+<a href="Host.aspx"><i class="fa fa-sticky-note-o"> | Host Information</i></a>
+<a href=""><i class="fa fa-search"> | Search Artefacts</i></a>
+<a href="ReceiveLocations.aspx"><i class="fa fa-map-marker">  &nbsp;| Receive Locations</i></a>
+<a href="SendPorts.aspx"><i class="fa fa-share-square-o"> | Send Ports</i></a>
+<a href="javascript:void(0);" title ="Menu" class="icon" onclick="showDropdownItems()" id ="a1"><i class="fa fa-bars"></i></a>
+</div>
+<div id="divSmall" class="sidenavSmall">
+<a href="DashBoard.aspx" title ="Home"><i class="fa fa-home"></i></a>
+<a href="SuspensionMonitor.aspx" title="Suspension Monitor"><i class="fa fa-dashboard"></i></a>
+<a href="CustomQuery.aspx" title="Custom MsgBox Query"><i class="fa fa-puzzle-piece"></i></a>
+<a href="ApplicationInformation.aspx" title="Application Information"><i class="fa fa-sticky-note"></i></a>
+<a href="Host.aspx" title="Host Information"><i class="fa fa-sticky-note-o"></i></a>
+<a href="" title="Search Artefacts"><i class="fa fa-search"></i></a>
+<a href="ReceiveLocations.aspx" title="Receive Locations"><i class="fa fa-map-marker"></i></a>
+<a href="SendPorts.aspx" title="Send Ports"><i class="fa fa-share-square-o"></i></a>
+</div>
+<div id="divSidebar" class="sidenav">
+<img alt="" src="Images/Logo.jpg" style="height:57px;width:200px;padding:8px;" />
+<a href="SuspensionMonitor.aspx"><i class="fa fa-dashboard"> | Suspension Monitor</i></a>
+<a href="CustomQuery.aspx"><i class="fa fa-puzzle-piece"> | Custom MsgBox Query</i></a>
+<a href="ApplicationInformation.aspx"><i class="fa fa-sticky-note"> | Application Information</i></a>
+<a href="Host.aspx"><i class="fa fa-sticky-note-o"> | Host Information</i></a>
+<a href=""><i class="fa fa-search"> | Search Artefacts</i></a>
+<a href="ReceiveLocations.aspx"><i class="fa fa-map-marker">  &nbsp;| Receive Locations</i></a>
+<a href="SendPorts.aspx"><i class="fa fa-share-square-o"> | Send Ports</i></a>
+</div>
+<div id="divMain" class="divBody">
+<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+</div>
+  </form>  
+</body>
+</html>
